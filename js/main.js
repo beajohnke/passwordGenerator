@@ -77,7 +77,7 @@ const generatePassword = (hasNumbers, hasSymbols, hasLower, hasUpper, length) =>
         ...(hasSymbols ? symbols : []),
     ];
 
-    if(newArray.length === 0) return;
+    if(newArray.length === 0) return "";
 
 
     for(let i = 0; i < length; i++) {
