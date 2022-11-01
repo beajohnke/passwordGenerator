@@ -1,1 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+:root {
+    /* #0a0e31 */
+    --main-color: #808fed;
+    --sec-color: #4051c0;
+    /* 7b82c5 */
+
+    --bg-settings: rgba(255, 255, 255, 0.08);
+    --white-color: #fff;
+}
+
+/* ====== BASE ====== */
+
+html, body {
+    height: auto;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--main-color);
+}
+
+#container {
+    max-width: 430px;
+    width: 100%;
+    margin: 0 20px;
+    overflow: hidden;
+
+    background-color: var(--white-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#container .forms {
+    width: 200%;
+    height: 440px;
+    transition: height 0.2s ease;
+
+    display: flex;
+    align-items: center;
+}
+
+#container .form {
+    width: 50%;
+    padding: 30px;
+    transition: margin-left 0.18s ease;
+}
+
+#container.active .form-login {
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+#container.active {
+    margin: 25px 20px;
+}
+
+#container.active .forms {
+    height: auto
+}
+
+#container .signup {
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+
+#container.active .signup {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.form-title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--sec-color);
+}
+
+.form-input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form-alt {
+    margin: 0;
+}
+
+.form-input input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--sec-color);
+
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    color: #999;
+    font-size: 23px;
+}
+
+.form-input i.icon-password {
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.form-input input:focus, :valid {
+    border-bottom-color: var(--main-color);
+}
+
+.form-input input:is(:focus, :valid) ~ i{
+    color: var(--sec-color);
+}
+
+.checkbox-content, .login-signup {
+    display: flex;
+    align-items: center;
+}
+
+.form-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.checkbox-content input, .generate-settings input {
+    margin: 3px 8px 3px 4px;
+    accent-color: var(--sec-color);
+}
+
+.form-text, .password-text {
+    color: #333;
+    font-size: 14px;
+}
+
+.text-alt {
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text-alt:hover {
+    font-weight: 600;
+    color: var(--sec-color);
+}
+
+.form-button input {
+    background-color: var(--sec-color);
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+}
+
+.form-button input:hover {
+    background-color: var(--main-color);
+}
+
+.login-signup {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+/* ====== PASSWORD GENERATOR ====== */
+.password-text {
+    padding: 20px 0 13px;
+    text-align: center;
+}
+
+#generate-options p, .label-title {
+    color: rgb(85, 84, 84);
+    text-align: center;
+    font-size: 14px;
+}
+
+.generate-settings {
+    margin: 4px 0;
+    position: relative;
+    left: 10px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 14px;
+    color: rgb(85, 84, 84);
+}
+
+.generated-password {
+    padding: 0.8rem;
+    margin: 1rem 0;
+    display: none;
+
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#btn-generate {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+#resultPassword {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.password-ranger {
+    width: 40%;
+}
+
+.ranger {
+    margin: 10px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: var(--main-color);
+    margin-top: -4px;
+}
