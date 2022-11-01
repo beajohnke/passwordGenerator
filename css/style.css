@@ -2,13 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
-    /* #0a0e31 */
     --main-color: #808fed;
     --sec-color: #4051c0;
-    /* 7b82c5 */
-
-    --bg-settings: rgba(255, 255, 255, 0.08);
-    --white-color: #fff;
 }
 
 /* ====== BASE ====== */
@@ -33,7 +28,7 @@ body {
     margin: 0 20px;
     overflow: hidden;
 
-    background-color: var(--white-color);
+    background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
