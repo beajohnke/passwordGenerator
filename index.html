@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerador de Senha</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <main id="container">
+            <section class="forms">
+
+                <div class="form form-login">
+                    <h2 class="form-title">Login</h2>
+                    <form action="#">
+
+                        <div class="form-input">
+                            <input type="text" placeholder="Digite seu email" required>
+                            <i class="uil uil-envelope"></i>
+                        </div>
+
+                        <div class="form-input">
+                            <input type="password" class="form-password" placeholder="Digite sua senha" required>
+                            <i class="uil uil-lock"></i>
+                            <i class="uil uil-eye-slash icon-password"></i>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <div class="checkbox-content">
+                                <input type="checkbox" id="loginCheckbox">
+                                <label for="loginCheckbox" class="form-text">Mantenha-me conectado</label>
+                            </div>
+
+                            <a href="#" class="form-text text-alt">Esqueci minha senha</a>
+                        </div>
+
+                        <div class="form-input form-button">
+                            <input type="button" value="Login">
+                        </div>
+                    </form>
+
+                    <div class="login-signup">
+                        <span class="form-text">Não é um membro?
+                            <a href="#" class="form-text text-alt" id="register">Cadastre-se já</a>
+                        </span>
+                    </div>
+                </div>
+
+            <!-- REGISTRATION FORM -->
+                    <div class="signup form">
+                        <h2 class="form-title">Registre-se</h2>
+                        <form action="#">
+
+                            <div class="form-input">
+                                <input type="text" placeholder="Digite seu nome" required>
+                                <i class="uil uil-user"></i>
+                            </div>
+
+                            <div class="form-input">
+                                <input type="text" placeholder="Digite seu email" required>
+                                <i class="uil uil-envelope"></i>
+                            </div>
+                            <p class="password-text">Quer ajuda para criar uma senha? 
+                                <span class="open-password-generator text-alt" onclick="toggle('generated-password')">Clique aqui.</span>
+                            </p>
+                            <div class="generated-password" style="display: none;">
+                                <div id="generate-options">
+                                    <p>Selecione as opções que você deseja:</p>
+                                    <div class="ranger">
+                                        <p>Tamanho da Senha:</p>
+                                        <input type="range" min="6" max="20" class="password-ranger" id="passwordLength">
+                                        <label for="passwordLength" class="label-title"></label>
+                                    </div>
+
+                                    <div class="generate-settings">
+                                        <input type="checkbox" id="uppercase" checked>
+                                        <label for="uppercase">Incluir letras maiúsculas</label>
+                                    </div>
+
+                                    <div class="generate-settings">
+                                        <input type="checkbox" id="lowercase" checked>
+                                        <label for="lowercase">Incluir letras minúsculas</label>
+                                    </div>
+
+                                    <div class="generate-settings">
+                                        <input type="checkbox" id="number" checked>
+                                        <label for="number">Incluir números</label>
+                                    </div>
+
+                                    <div class="generate-settings">
+                                        <input type="checkbox" id="symbols" checked>
+                                        <label for="symbols">Incluir símbolos</label>
+                                    </div>
+                                    
+                                    <button id="btn-generate">Criar senha</button>
+
+                                    <div>
+                                        <p class="result"></p>
+                                        <h3 id="resultPassword"></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-input form-alt">
+                                <input type="password" class="form-password" placeholder="Crie sua senha" required>
+                                <i class="uil uil-lock"></i>
+                            </div>
+
+                            <div class="form-input">
+                                <input type="password" class="form-password" placeholder="Confirme sua senha" required>
+                                <i class="uil uil-lock"></i>
+                                <i class="uil uil-eye-slash icon-password"></i>
+                            </div>
+        
+                            <div class="form-checkbox">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="termsCheckbox">
+                                    <label for="termsCheckbox" class="form-text">Eu aceito todos os <span class="text-alt">Termos & Condições</span></label>
+                                </div>
+                            </div>
+        
+                            <div class="form-input form-button">
+                                <input type="button" value="Login">
+                            </div>
+
+                        </form>
+        
+                        <div class="login-signup">
+                            <span class="form-text">Já possui uma conta?
+                                <a href="#" class="form-text text-alt" id="logon">Faça login</a>
+                            </span>
+                        </div>
+                    </div>
+                
+            </section>
+        </main>
+        
+        <script src="js/main.js"></script>
+    </body>
+</html>
