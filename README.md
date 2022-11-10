@@ -1,4 +1,4 @@
-# ⚠️ Página de Login com Gerador de Senha
+# 🎲 Página de Login com Gerador de Senha
 
 > Página de Login fictícia feita para estudos e aprimoramento das habilidades de Front-End. 
 
